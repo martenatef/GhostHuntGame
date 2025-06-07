@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ghost Game</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <style>
+    /* إزالة الهوامش والتوسيط */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
+      color: #eee;
+      user-select: none;
+      position: relative;
+    }
+
+    h1 {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      font-weight: 700;
+      font-size: 2.8rem;
+      text-shadow: 0 0 10px #000000;
+      pointer-events: none; /* لمنع تداخل النقرات على النص */
+      background: none;
+      border: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ghost Game</h1>
+  <canvas id="gameCanvas"></canvas>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+  
+</body>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
